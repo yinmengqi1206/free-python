@@ -58,9 +58,9 @@ today_time_str = today.strftime('%Y-%m-%d-%H-%M-%S')
 # 发送邮件配置
 email_config = {
     # 发件人昵称和地址
-    'sender': 'ins小程系统<monitor@vspo.cn>',
+    'sender': 'ins小程系统<xxxxxx>',
     # 收件人昵称和地址 多个收件人用逗号分隔
-    'receiver': 'yinmengqi@vspo.cn',
+    'receiver': 'xxxxxx',
     # 邮件主题
     'subject': 'ins小程序复兴乐园数据',
     # 邮件内容
@@ -70,7 +70,7 @@ email_config = {
     # 邮件端口
     'smtp_port': 465,
     # 邮件发送方名称
-    'username': 'monitor@vspo.cn',
+    'username': 'xxxxxx',
     # 邮件发送方密码
     'password': 'xxxxxx'
 }
