@@ -27,7 +27,7 @@ mysql_config = {
     'port': 3306,
     'database': 'vspo_ins',
     'user': 'root',
-    'password': 'Vspn@root123!'
+    'password': 'xxxxxx'
 }
 
 
@@ -72,7 +72,7 @@ email_config = {
     # 邮件发送方名称
     'username': 'monitor@vspo.cn',
     # 邮件发送方密码
-    'password': 'pbNvmkyN2VbQ4qtn'
+    'password': 'xxxxxx'
 }
 
 
