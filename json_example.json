@@ -1,0 +1,185 @@
+{
+    "code": 200,
+    "msg": "请求成功",
+    "data": {
+        "safetyInfo": {
+            "registerTime": "1713411871000",
+            "registerIp": "58.135.84.42",
+            "createTime": "1715335179000",
+            "ipAddr": "58.135.84.42",
+            "ipArea": "北京",
+            "area": "area",
+            "mac": "mac",
+            "imei": "imei",
+            "deviceId": "deviceId",
+            "deviceModel": "deviceModel",
+            "osInfo": "osInfoosInfo"
+        },
+        "banRecord": [
+            {
+                "statusDesc": "解封",
+                "createTime": "1715574439000"
+            },
+            {
+                "statusDesc": "封号",
+                "createTime": "1715574430000"
+            },
+            {
+                "statusDesc": "解封",
+                "createTime": "1715574307000"
+            },
+            {
+                "statusDesc": "封号",
+                "createTime": "1715574288000"
+            }
+        ],
+        "talkRecord": [
+            {
+                "statusDesc": "解禁",
+                "createTime": "1715673034000"
+            },
+            {
+                "statusDesc": "禁言",
+                "createTime": "1715673004000"
+            },
+            {
+                "statusDesc": "解禁",
+                "createTime": "1715672832000"
+            },
+            {
+                "statusDesc": "禁言",
+                "createTime": "1715672740000"
+            },
+            {
+                "statusDesc": "解禁",
+                "createTime": "1715672455000"
+            },
+            {
+                "statusDesc": "禁言",
+                "createTime": "1715672345000"
+            },
+            {
+                "statusDesc": "禁言",
+                "createTime": "1715672234000"
+            },
+            {
+                "statusDesc": "禁言",
+                "createTime": "1715671976000"
+            },
+            {
+                "statusDesc": "解禁",
+                "createTime": "1715574365000"
+            },
+            {
+                "statusDesc": "禁言",
+                "createTime": "1715574359000"
+            }
+        ],
+        "userComplete": {
+            "id": 100143,
+            "openId": "o9JoB5v3MAv77ezsCq8dKV_uAm00",
+            "phone": "13121552460",
+            "nickName": "孟孖",
+            "sex": 0,
+            "birthday": "2000-08-28",
+            "constellation": "处女座",
+            "avatar": "https://testcdn.vspo.cn/ins/userImage/test/2023-08-18/1692363731134714954.jpg",
+            "userPoint": 123,
+            "height": 171,
+            "userTypeList": [
+                0,
+                4,
+                6
+            ],
+            "pointStatus": 0,
+            "insStatus": 1,
+            "insTime": "1714266000000",
+            "hideStatus": 0,
+            "passProgress": 4,
+            "adminMerchantId": null,
+            "completion": 102,
+            "age": 23,
+            "ext": {
+                "summary": "孟孖孟孖",
+                "locus": 0
+            },
+            "photos": [
+                {
+                    "id": 1670,
+                    "photo": "https://testcdn.vspo.cn/ins/userImage/test/2023-08-18/1692363731134714954.jpg",
+                    "avatar": 1
+                }
+            ],
+            "disco": {
+                "code": "disco1000",
+                "value": "卡座蹦迪",
+                "icon": "https://testcdn.vspo.cn/ins/icon/disco/%E5%8D%A1%E5%BA%A7.png"
+            },
+            "tags": [
+                {
+                    "code": "label2003",
+                    "value": "😝社牛",
+                    "icon": null
+                },
+                {
+                    "code": "label2004",
+                    "value": "🎉气氛大王",
+                    "icon": null
+                },
+                {
+                    "code": "label2005",
+                    "value": "💘纯爱战士",
+                    "icon": null
+                },
+                {
+                    "code": "lable2052",
+                    "value": "🤵创过业",
+                    "icon": null
+                }
+            ],
+            "canMeet": [
+                {
+                    "code": "meetDoing4003",
+                    "value": "舞池蹦个迪",
+                    "icon": "https://testcdn.vspo.cn/ins/icon/meetDoing/black/meetDoing4003.png"
+                }
+            ],
+            "socialGoal": [
+                {
+                    "code": "socialGoal1",
+                    "value": "线下约酒蹦个迪",
+                    "icon": "https://testcdn.vspo.cn/ins/icon/socialGoal/black/socialGoal1.png"
+                },
+                {
+                    "code": "socialGoal2",
+                    "value": "开个盲盒面个基",
+                    "icon": "https://testcdn.vspo.cn/ins/icon/socialGoal/black/socialGoal2.png"
+                }
+            ],
+            "mbti": {
+                "code": "MBTI1",
+                "value": "INTJ",
+                "icon": ""
+            },
+            "truthLies": [
+                {
+                    "id": 31,
+                    "content": "我会用眼皮跳舞",
+                    "type": 1
+                },
+                {
+                    "id": 32,
+                    "content": "我会开飞机",
+                    "type": 0
+                },
+                {
+                    "id": 33,
+                    "content": "我会单手俯卧撑",
+                    "type": 0
+                }
+            ],
+            "balance": 0,
+            "baseCompletion": 8
+        }
+    }
+}
