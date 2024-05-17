@@ -1,6 +1,7 @@
 # let's import the flask
 from flask import Flask, render_template, request, redirect, url_for
 import os # importing operating system module
+import pymongo
 
 app = Flask(__name__)
 # to stop caching static file
