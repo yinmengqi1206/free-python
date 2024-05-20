@@ -1,12 +1,12 @@
 # let's import the flask
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for,Response
 import os # importing operating system module
-import pymongo
+from mongo_crud import mongo_api
 
 app = Flask(__name__)
 # to stop caching static file
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-
+app.register_blueprint(mongo_api,url_prefix='/mongo_crud')
 
 
 @app.route('/') # this decorator create the home route
