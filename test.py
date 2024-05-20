@@ -1,19 +1,19 @@
 import pymongo
 from bson.objectid import ObjectId
 
-client = pymongo.MongoClient('mongodb://cnode:cnode@ubuntu-linux:27017/?authSource=cnode')
+client = pymongo.MongoClient('mongodb://admin:123456@ubuntu-linux:27017')
 
-db = client.cnode
+db = client.test
 
-# db.students.insert_one({'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'age': 250})
-# print(client.list_database_names())
+db.students.insert_one({'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'age': 250})
+print(client.list_database_names())
 
-# students = [
-#         {'name':'David','country':'UK','city':'London','age':34},
-#         {'name':'John','country':'Sweden','city':'Stockholm','age':28},
-#         {'name':'Sami','country':'Finland','city':'Helsinki','age':25},
-#     ]
-# db.students.insert_many(students)
+students = [
+        {'name':'David','country':'UK','city':'London','age':34},
+        {'name':'John','country':'Sweden','city':'Stockholm','age':28},
+        {'name':'Sami','country':'Finland','city':'Helsinki','age':25},
+    ]
+db.students.insert_many(students)
 
 query = {'age':250}
 new_value = {'$set':{'age':38}}
