@@ -1,13 +1,24 @@
 # let's import the flask
 from flask import Flask, render_template, request, redirect, url_for,Response
+from flask_cors import CORS
 import os # importing operating system module
 from mongo_crud import mongo_api
+from bson.json_util import dumps
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 # to stop caching static file
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.register_blueprint(mongo_api,url_prefix='/mongo_crud')
 
+@app.route('/login',methods= ['POST'])
+def login():
+    username =  request.json.get('username')
+    password =  request.json.get('password')
+    if username == 'admin' and password == '123456':
+        return Response(dumps({"code":200,"msg":"login success","data":"token"}), mimetype='application/json')
+    else:
+        return Response(dumps({"code":500,"msg":"login failed"}), mimetype='application/json')
 
 @app.route('/') # this decorator create the home route
 def home ():
