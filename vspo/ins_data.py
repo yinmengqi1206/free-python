@@ -122,7 +122,7 @@ def run_data():
         # content
         excel_count_list.append(len(row_result))
         # 内容
-        if(len(row_result)==1):
+        if(excel_file.find("汇总数据")!=-1):
             content = ""
             for index,row in enumerate(row_column):
                 content = content + "     - "+str(row) + "：" + str(row_result[0][index]) + flag
