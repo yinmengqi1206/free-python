@@ -27,7 +27,7 @@ mysql_config = {
     'port': 3306,
     'database': 'vspo_ins_app',
     'user': 'root',
-    'password': 'Vspn@root123!'
+    'password': '******'
 }
 
 
