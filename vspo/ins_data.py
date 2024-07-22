@@ -15,19 +15,19 @@ import pandas as pd
 
 # 指定SQL文件所在的目录
 # 服务器的路径
-base_directory = '/Users/yinmengqi/Desktop/work/ins_data/'
+base_directory = '/data/project-service/ins_app_data/'
 # 本地调试路径
 # base_directory = './'
 # MySQL数据库连接配置
 mysql_config = {
     # 内网地址
-    # 'host': 'rm-uf6821gf44bi8ekt6.mysql.rds.aliyuncs.com',
+    'host': 'rm-uf6821gf44bi8ekt6.mysql.rds.aliyuncs.com',
     # 外网地址
-    'host': 'rm-uf6821gf44bi8ekt6fo.mysql.rds.aliyuncs.com',
+    # 'host': 'rm-uf6821gf44bi8ekt6fo.mysql.rds.aliyuncs.com',
     'port': 3306,
-    'database': 'vspo_ins',
+    'database': 'vspo_ins_app',
     'user': 'root',
-    'password': 'xxxxxx'
+    'password': 'Vspn@root123!'
 }
 
 
@@ -58,21 +58,21 @@ today_time_str = today.strftime('%Y-%m-%d-%H-%M-%S')
 # 发送邮件配置
 email_config = {
     # 发件人昵称和地址
-    'sender': 'ins小程系统<xxxxxx>',
+    'sender': 'ins新乐园app<monitor@vspo.cn>',
     # 收件人昵称和地址 多个收件人用逗号分隔
-    'receiver': 'xxxxxx',
+    'receiver': 'mengqingwei@vspo.cn,jiajie@vspo.cn,yanglei@vspo.cn,tongxin@vspo.cn,yinmengqi@vspo.cn',
     # 邮件主题
-    'subject': 'ins小程序复兴乐园数据',
+    'subject': 'ins新乐园app数据',
     # 邮件内容
-    'body': 'ins小程序复兴乐园数据',
+    'body': 'ins新乐园app数据',
     # 邮件服务器
     'smtp_server': 'smtp.exmail.qq.com',
     # 邮件端口
     'smtp_port': 465,
     # 邮件发送方名称
-    'username': 'xxxxxx',
+    'username': 'monitor@vspo.cn',
     # 邮件发送方密码
-    'password': 'xxxxxx'
+    'password': 'pbNvmkyN2VbQ4qtn'
 }
 
 
@@ -89,6 +89,10 @@ def run_data():
     excel_name_list = []
     # 所有excel文件对应的记录数
     excel_count_list = []
+    # 内容
+    excel_content_list = []
+    # 英文换行
+    flag = "\n"
     # SQL查询语句
     sql_query = """
         SELECT
@@ -115,8 +119,16 @@ def run_data():
         row_column, row_result = query_data(file_sql)
         # 加入excel列表名字
         excel_name_list.append(excel_file)
-        # row_result总数
+        # content
         excel_count_list.append(len(row_result))
+        # 内容
+        if(len(row_result)==1):
+            content = ""
+            for index,row in enumerate(row_column):
+                content = content + "     - "+str(row) + "：" + str(row_result[0][index]) + flag
+            excel_content_list.append(content)
+        else:
+            excel_content_list.append("")
         # 将查询结果转换为DataFrame
         general_excel(row_column, row_result, base_today_path + excel_file)
     end_time = time.time()
@@ -130,17 +142,18 @@ def run_data():
     msg['To'] = email_config['receiver']
     msg['Subject'] = email_config['subject'] + "-" + today_str
 
-    # 英文换行
-    flag = "\n"
     # 添加附件
-    for excel_file, excel_count in zip(excel_name_list, excel_count_list):
+    for excel_file, excel_count,content in zip(excel_name_list, excel_count_list,excel_content_list):
         with open(base_today_path + excel_file, 'rb') as file:
             attachment = MIMEApplication(file.read())
         attachment.add_header('Content-Type', 'application/octet-stream')
         attachment.add_header('Content-Disposition', 'attachment', filename=Header(excel_file, 'utf-8').encode())
         msg.attach(attachment)
-        # 拼接邮件内容
-        email_config['body'] = email_config['body'] + flag + excel_file + "条数：" + str(excel_count)
+		# 拼接邮件内容
+        if(excel_file.find("汇总数据")!=-1):
+            email_config['body'] = email_config['body'] + flag + excel_file + ":" + flag + content
+        else:
+            email_config['body'] = email_config['body'] + flag + excel_file + "条数：" + str(excel_count)
     # 添加邮件正文
     msg.attach(MIMEText(email_config['body'], 'plain', 'utf-8'))
 
