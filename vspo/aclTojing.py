@@ -1,7 +1,7 @@
 import pymysql
 
-conn = pymysql.connect(host='106.14.65.203', user='root',
-                       password='Vspn@root123!', database='vspo_ec_app')
+conn = pymysql.connect(host='rm-uf65p5426y64rn3i5bo.mysql.rds.aliyuncs.com', user='root',
+                       password='yqw87sKaFOja0fat', database='vspo_ec_app')
 cursor = conn.cursor()
 
 # 获取所有文本字段
