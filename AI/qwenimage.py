@@ -17,7 +17,7 @@ messages = [
 
 # 新加坡和北京地域的API Key不同。获取API Key：https://help.aliyun.com/zh/model-studio/get-api-key
 # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx"
-api_key = 'sk-2466668809eb44b39855533257dc85c5'
+api_key = 'sk-xxxxxx'  # 替换为你的API Key
 
 response = MultiModalConversation.call(
     api_key=api_key,
